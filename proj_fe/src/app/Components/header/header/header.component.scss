@@ -1,0 +1,27 @@
+.header {
+    width: 100%;
+    height: 50px;
+    padding: 5px 15px 9px 15px;
+    background-color: rgb(73, 73, 73);
+
+    .titleLink a {
+        font-size: 25px;
+        font-weight: bold;
+
+        :hover {
+            color: white;
+        }
+    }
+
+    .button-link {
+        margin-top: auto;
+        margin-bottom: auto;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    a {
+        color: white;
+        text-decoration: none !important;
+    }
+}

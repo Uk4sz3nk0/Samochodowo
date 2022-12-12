@@ -1,0 +1,30 @@
+.landingPage {
+    width: 100%;
+    height: 75vh;
+    margin-top: 25px;
+    margin-left: auto;
+    margin-right: auto;
+
+    .banner {
+        height: 100%;
+        width: 100%;
+        background-image: url(../../../assets/images/background/izera_background.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+
+    .openForm {
+        font-weight: bold;
+        z-index: 2;
+        position: absolute;
+        margin-top: 30px;
+        margin-left: 25px;
+        padding: 15px 15px 15px 15px;
+        background-color: rgb(214, 214, 214);
+        border-radius: 7.5px;
+        height: 60vh;
+        width: 450px;
+
+    }
+}

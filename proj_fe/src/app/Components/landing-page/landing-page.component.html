@@ -1,0 +1,105 @@
+<div class="container landingPage">
+    <div class="banner">
+        <div class="openForm">
+            <div class="row">
+                <p>Czego szukasz?</p>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label for="carType" class="form-label">Typ nadwozia</label>
+                    <select name="carType" id="" class="form-select">
+                        <option value="defaultValue" selected>Typ nadwozia</option>
+                        <option *ngFor="let item of carTypes; let x = index" [value]="x">{{item}}</option>
+                    </select>
+                </div>
+                <div class="col">
+                    <label for="carName" class="form-label">Marka pojazdu</label>
+                    <select [(ngModel)]="carsFilter.carName" (ngModelChange)="checkCarName()" name="carName" id="carName" class="form-select">
+                        <option value="defaultValue" selected>Marka pojazdu</option>
+                        <option *ngFor="let carName of carNames" value="{{carName | lowercase}}">{{carName}}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label for="carModel" class="form-label">Model pojazdu</label>
+                    <select [(ngModel)]="carsFilter.carModel" name="carModel" id="" class="form-select" [attr.disabled]="!isCarNameChanged ? 'true' : null">
+                        <option value="defaultValue" selected>Model pojazdu</option>
+                        <option *ngFor="let carModel of carModels" value="{{carModel | lowercase}}">{{carModel}}</option>
+                    </select>
+                </div>
+                <div class="col">
+                    <label for="carGeneration" class="form-label">Generacja</label>
+                    <select name="carGeneration" id="" class="form-select" disabled>
+                        <option value="defaultValue" selected>Genracja</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label for="" class="form-label">Cena</label>
+                    <div class="row">
+                        <div class="col">
+                            <select name="priceFrom" id="" class="form-select">
+                                <option value="defaultValue">od</option>
+                            </select>
+                        </div>
+                        <div class="col">
+                            <select name="priceTo" id="" class="form-select">
+                                <option value="defaultValue">do</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <label for="" class="form-label">Rok produkcji</label>
+                    <div class="row">
+                        <div class="col">
+                            <select name="prodYearFrom" id="" class="form-select">
+                                <option value="defaultValue">od</option>
+                            </select>
+                        </div>
+                        <div class="col">
+                            <select name="prodYearTo" id="" class="form-select">
+                                <option value="default value">do</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label for="fuelType" class="form-label">Rodzaj paliwa</label>
+                    <select name="fuelType" id="" class="form-select">
+                        <option value="defaultValue">Rodzaj paliwa</option>
+                        <option value=""></option>
+                    </select>
+                </div>
+                <div class="col">
+                    <label for="" class="form-label">Przebieg</label>
+                    <div class="row">
+                        <div class="col">
+                            <select name="distanceFrom" id="" class="form-select">
+                                <option value="defaultValue">od</option>
+                            </select>
+                        </div>
+                        <div class="col">
+                            <select name="distanceTo" id="" class="form-select">
+                                <option value="defaultValue">do</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col">
+                    <a href="" class="btn btn-primary">Zaawansowane Filtry</a>
+                </div>
+                <div class="col">
+                    <button (click)="goToCarList()" id="goToCarList" class="btn btn-danger">Pokaż {{advertismentCount}} ogłoszeń</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

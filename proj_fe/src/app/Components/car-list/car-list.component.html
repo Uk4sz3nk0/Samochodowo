@@ -1,0 +1,26 @@
+<div class="container content-container">
+  <div class="carBaseElement" *ngFor="let car of cars">
+    <div class="row align-items-start">
+      <div class="col">
+        <div class="img-place">
+          <img src="assets/images/{{car.image_name | lowercase}}.jpg" alt="Car main image" class="car-main-img">
+        </div>
+      </div>
+      <div class="col">
+        <p class="car-name-model"><b>{{car.name}} {{car.model}}</b></p>
+        <p>{{car.description}}</p>
+        <p>{{car.prod_year}} * {{car.distance}} km * {{car.engine_size}} cm3 * {{getFuelName(car.fuel_id)}}</p>
+      </div>
+      <div class="col price-section">
+        <p class="price"><b>{{car.price}} PLN</b></p>
+        <a href="#" class="btn btn-primary">Sprawdź</a>
+      </div>
+      <div class="col buttons-section">
+        <button class="btn btn-warning" (click)="goToEdit(car.id)">Edytuj</button>
+        <button class="btn btn-danger" (click)="deleteCar(car.id)">Usuń</button>
+      </div>
+      <span class="border-end"></span>
+      <span class="border-bottom"></span>
+    </div>
+  </div>
+</div>

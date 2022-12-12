@@ -1,0 +1,40 @@
+<div class="container main-car-form-container">
+    <br>
+    <h5>Formularz edycji ogłoszenia</h5>
+    <form (ngSubmit)="onSubmit()">
+      <label for="carName" clas="form-label">Marka samochodu: </label>
+      <input [(ngModel)]="carBase.name" type="text" name="carName" placeholder="np, BMW" class="form-control">
+      <label for="carModel" clas="form-label">Model samochodu: </label>
+      <input [(ngModel)]="carBase.model" type="text" name="carModel" placeholder="np. Seria 3" class="form-control">
+      <label for="prod_year" clas="form-label">Rok produkcji: </label>
+      <input [(ngModel)]="carBase.prod_year" type="text" name="prod_year" placeholder="np. 2016" class="form-control">
+      <label for="distance" clas="form-label">Przebieg: </label>
+      <input [(ngModel)]="carBase.distance" type="text" name="distance" placeholder="np. 45 000" class="form-control">
+      <label for="engine_size" clas="form-label">Poj. silnika (w cm3): </label>
+      <input [(ngModel)]="carBase.engine_size" type="text" name="engine_size" placeholder="np. 1989" class="form-control">
+      <label for="fuel_type_id" clas="form-label">Rodzaj paliwa: </label>
+      <select [(ngModel)]="carBase.fuel_id" name="fuel_type_id" id="" class="form-select">
+        <option value="1">Benzyna</option>
+        <option value="2">Benzyna + LPG</option>
+        <option value="3">Diesel</option>
+        <option value="4">Hybryda</option>
+        <option value="5">Elektryczny</option>
+        <option value="6">Wodór</option>
+      </select>
+      <label for="car_type_id" class="form-label">Typ nadwozia: </label>
+      <select [(ngModel)]="carBase.car_type_id" name="car_type_id" id="" class="form-select">
+        <option value="1">Hathback</option>
+        <option value="2">Coupe</option>
+        <option value="3">Cabrio</option>
+        <option value="4">Kombi</option>
+        <option value="5">Sedan</option>
+        <option value="6">Suv</option>
+      </select>
+      <label for="description" name="description" class="form-label">Opis: </label>
+      <input [(ngModel)]="carBase.description" type="text" name="description" placeholder="np. Stan igła, 1.8 TFSI 4x4" class="form-control">
+      <label for="price" class="form-label">Cena (w PLN): </label>
+      <input [(ngModel)]="carBase.price" type="text" name="price" class="form-control" placeholder="np. 145 000">
+      <br>
+      <button type="submit" class="btn btn-success">Zapisz zmiany</button>
+    </form>
+  </div>
